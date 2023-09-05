@@ -7,10 +7,18 @@ myForm.addEventListener('submit', onSubmit);
 function onSubmit(e)
 {
   e.preventDefault();
-  var name=JSON.stringify(nameInput.value);
-  var email=JSON.stringify(emailInput.value);
-  localStorage.setItem(name, email);
-  var user=JSON.parse(localStorage.getItem(name));
-  console.log(user);
+
+  let user={
+    name1:"Divya",
+    email1:"divya@gmail.com",
+
+   name2:"Akss",
+   email2:"akss@gmail.com"
+  };
+  var details=JSON.stringify(user);
+  
+  localStorage.setItem("users",details);
+  //var user=JSON.parse(localStorage.getItem(name));
+  console.log(details);
   
 }
