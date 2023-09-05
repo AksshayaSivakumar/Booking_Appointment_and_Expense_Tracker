@@ -12,4 +12,5 @@ function onSubmit(e)
   localStorage.setItem(name, email);
   var user=JSON.parse(localStorage.getItem(name));
   console.log(user);
+  
 }
