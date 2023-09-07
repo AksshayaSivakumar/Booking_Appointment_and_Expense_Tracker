@@ -30,12 +30,26 @@ function showonscreen(obj)
   childElem.textContent=obj.name+ '-' +obj.email
   const deleteBtn=document.createElement('input')
   deleteBtn.type='button'
-  deleteBtn.value='delete'
+  deleteBtn.value='delete '
+
+  const editbutton=document.createElement('input')
+  editbutton.type='button'
+  editbutton.value='edit '
+ 
   deleteBtn.onclick=()=>{
     localStorage.removeItem(obj.email)
     parentElem.removeChild(childElem)
   }
+    editbutton.onclick=()=>{
+      localStorage.removeItem(obj.email)
+      parentElem.removeChild(childElem)
+      nameInput.value=obj.name
+      emailInput.value=obj.email
+    }
+  
   childElem.appendChild(deleteBtn)
+  childElem.appendChild(editbutton)
   parentElem.appendChild(childElem)
+  
 }
   
