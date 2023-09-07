@@ -5,39 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Appointment App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body>
-    <header>
+    <header id="main-header" class="bg-success text-white p-4 mb-3 text-center">
       <h1>Appointment App</h1>
     </header>
 
-    <section class="container">
-      <form id="my-form">
-        <h1>Add User</h1>
-        <div class="msg"></div>
-        <div>
-          <label for="name">Name:</label>
-          <input type="text" id="name">
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="text" id="email">
-        </div>
-        <input class="btn" type="submit" value="Submit">
+    <div class="container">
+      <div id="main" class="card card-body">
+        <h2 class="title mb-3">Add User</h2>
+      <form id="my-form" class="form-inline mb-3">
+        
+       
+          <label for="name"> Name:</label>
+          <input type="text" class="form-control mr-2" id="name">
+        
+          <label for="email"> Email: </label>
+          <input type="text" class="form-control mr-2" id="email">
+        
+        <input class="btn btn-dark" type="submit" value="Submit">
       </form>
+      
 
-      <ul id="users"></ul>
+
+      <ul id="users" class="list-group"></ul>
 
       <!--<ul class="items">
         <li class="item">Item 1</li>
         <li class="item">Item 2</li>
         <li class="item">Item 3</li>
       </ul> -->
-    </section>
-    
+    </div>
+    </div>
+
 
     <script src="main.js"></script>
   </body>
 </html>
-
