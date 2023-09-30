@@ -4,39 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Appointment App</title>
+    <title>Expense Tracker</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body>
-    <header id="main-header" class="bg-success text-white p-4 mb-3 text-center">
-      <h1>Appointment App</h1>
+    <header id="main-header" class="bg-success text-white p-4 mb-5 text-center">
+      <h1>Expense Tracker</h1>
     </header>
 
     <div class="container">
-      <div id="main" class="card card-body">
-        <h2 class="title mb-3">Add User</h2>
-      <form id="my-form" class="form-inline mb-3">
+      <section class="content">
+        <h3 class="secondTitle mb-3">Add a new item: </h3>
+      
+        <form id="my-form" class="form-inline">
         
-       
-          <label for="name"> Name:</label>
-          <input type="text" class="form-control mr-2" id="name">
+          <label for="type" class="form-control-label mr-2">Type : </label>
+          <select id="type" type="text" class="form-control-label mr-2">
+              <option value="choose one...">Choose one...</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Electricity">Electricity</option>
+              <option value="Rent">Rent</option>
+              <option value="Other">Other</option>
+          </select>
+      
+      
+          <label for="name" class="form-control-label mr-2">Name : </label>
+          <input type="text" class="form-control-label mr-2" id="name">
+     
+
+      
+          <label for="date" class="form-control-label mr-2">Date :</label>
+          <input type="date" class="form-control-label mr-2" id="date">
+      
+      
+          <label for="amount" class="form-control-label mr-2">Amount :</label>
+          <input type="number" class="form-control-label mr-2" id="amount">
+      
+          <input class="btn btn-dark" type="submit" value="Add Expense">
+        </form>
+          
         
-          <label for="email"> Email: </label>
-          <input type="text" class="form-control mr-2" id="email">
         
-        <input class="btn btn-dark" type="submit" value="Submit">
-      </form>
+      
       
 
 
-      <ul id="users" class="list-group"></ul>
+      <ul id="users" class="list-group" ></ul>
 
-      <!--<ul class="items">
-        <li class="item">Item 1</li>
-        <li class="item">Item 2</li>
-        <li class="item">Item 3</li>
-      </ul> -->
-    </div>
+     
+    </section>
     </div>
 
 

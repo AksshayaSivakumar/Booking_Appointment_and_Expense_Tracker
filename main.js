@@ -1,7 +1,8 @@
 const myForm = document.getElementById('my-form');
+const typeInput=document.getElementById('type');
 const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-//const itemlist=document.getElementById('users')
+const amountInput = document.getElementById('amount');
+const dateInput=document.getElementById('date')
 
 
 myForm.addEventListener('submit', onSubmit);
@@ -10,16 +11,23 @@ function onSubmit(e)
 {
   e.preventDefault();
  
+    const type=typeInput.value
     const name=nameInput.value
-    const email=emailInput.value
-  
+    const amount=amountInput.value
+    const date=dateInput.value
     let obj={
+      type,
       name,
-      email
+      amount,
+      date
     }
+
   
-  localStorage.setItem(obj.email,JSON.stringify(obj));
+  localStorage.setItem(obj.amount,JSON.stringify(obj));
+
+ 
  showonscreen(obj);
+ document.getElementById('my-form').reset();
   }
 //  var name1=JSON.parse(name);
 //  var email1=JSON.parse(email);
@@ -27,7 +35,8 @@ function showonscreen(obj)
 {
   const parentElem =document.getElementById('users')
   const childElem=document.createElement('li')
-  childElem.textContent=obj.name+ '-' +obj.email
+  childElem.textContent=obj.type+ ' - '+obj.name + ' - '+ '$' + obj.amount + ' - '+ obj.date
+
   const deleteBtn=document.createElement('input')
   deleteBtn.type='button'
   deleteBtn.value='delete '
@@ -37,14 +46,17 @@ function showonscreen(obj)
   editbutton.value='edit '
  
   deleteBtn.onclick=()=>{
-    localStorage.removeItem(obj.email)
+    localStorage.removeItem(obj.amount)
     parentElem.removeChild(childElem)
+    
   }
     editbutton.onclick=()=>{
-      localStorage.removeItem(obj.email)
+      localStorage.removeItem(obj.amount)
       parentElem.removeChild(childElem)
+      typeInput.value=obj.type
       nameInput.value=obj.name
-      emailInput.value=obj.email
+      amountInput.value=obj.amount
+      dateInput.value=obj.date
     }
   
   childElem.appendChild(deleteBtn)
