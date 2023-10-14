@@ -29,13 +29,32 @@ function onSubmit(e)
    //axios.showonscreen(response.data);
    console.log(response);
    }) 
+     .catch((error)=>{
+        console.log(error);
+    })
  showonscreen(obj);
  document.getElementById('my-form').reset();
   }
+
+  axios.get("https://crudcrud.com/api/1d61089c276a4cdc952a33f3bea0cb1b/expensetracker")
+    .then((response)=>{
+        console.log(response);
+
+        for(var i=0;i<response.data.length;i++)
+        {
+            showonscreen(response.data[i]);
+        }
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+
 //  var name1=JSON.parse(name);
 //  var email1=JSON.parse(email);
 function showonscreen(obj)
 {
+
+    
   const parentElem =document.getElementById('users')
   const childElem=document.createElement('li')
   childElem.textContent=obj.type+ ' - '+obj.name + ' - '+ '$' + obj.amount + ' - '+ obj.date
