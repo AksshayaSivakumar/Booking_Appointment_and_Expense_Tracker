@@ -57,7 +57,7 @@ function showonscreen(obj)
     
   const parentElem =document.getElementById('users')
   const childElem=document.createElement('li')
-  childElem.textContent=obj.type+ ' - '+obj.name + ' - '+ '$' + obj.amount + ' - '+ obj.date
+  childElem.textContent=obj.type+ ' - '+obj.name + ' - ' + obj.amount + ' - '+ obj.date
 
   const deleteBtn=document.createElement('input')
   deleteBtn.type='button'
@@ -70,7 +70,7 @@ function showonscreen(obj)
   deleteBtn.onclick=()=>{
     //localStorage.removeItem(obj.amount)
 
-    axios.delete("https://crudcrud.com/api/cd2b577305af44fea547534e723d3055/expense/652c676b2e0fb203e853f153",obj)
+    axios.delete("https://crudcrud.com/api/cd2b577305af44fea547534e723d3055/expense/652c6c092e0fb203e853f154",obj)
       .then((response)=>{
    //axios.showonscreen(response.data);
    console.log(response);
@@ -82,7 +82,16 @@ function showonscreen(obj)
     
   }
     editbutton.onclick=()=>{
-      localStorage.removeItem(obj.amount)
+      //localStorage.removeItem(obj.amount)
+      axios.delete("https://crudcrud.com/api/cd2b577305af44fea547534e723d3055/expense/652c75f12e0fb203e853f158",obj)
+      .then((response)=>{
+        console.log(response);
+        }) 
+        
+          .catch((error)=>{
+             console.log(error);
+         })
+        
       parentElem.removeChild(childElem)
       typeInput.value=obj.type
       nameInput.value=obj.name
