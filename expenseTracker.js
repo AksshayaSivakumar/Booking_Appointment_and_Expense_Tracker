@@ -24,7 +24,7 @@ function onSubmit(e)
 
   
   //localStorage.setItem(obj.amount,JSON.stringify(obj));
-   axios.post("https://crudcrud.com/api/1d61089c276a4cdc952a33f3bea0cb1b/expensetracker",obj)
+   axios.post("https://crudcrud.com/api/cd2b577305af44fea547534e723d3055/expense",obj)
       .then((response)=>{
    //axios.showonscreen(response.data);
    console.log(response);
@@ -36,7 +36,7 @@ function onSubmit(e)
  document.getElementById('my-form').reset();
   }
 
-  axios.get("https://crudcrud.com/api/1d61089c276a4cdc952a33f3bea0cb1b/expensetracker")
+  axios.get("https://crudcrud.com/api/cd2b577305af44fea547534e723d3055/expense")
     .then((response)=>{
         console.log(response);
 
@@ -68,7 +68,16 @@ function showonscreen(obj)
   editbutton.value='edit '
  
   deleteBtn.onclick=()=>{
-    localStorage.removeItem(obj.amount)
+    //localStorage.removeItem(obj.amount)
+
+    axios.delete("https://crudcrud.com/api/cd2b577305af44fea547534e723d3055/expense/652c676b2e0fb203e853f153",obj)
+      .then((response)=>{
+   //axios.showonscreen(response.data);
+   console.log(response);
+   }) 
+     .catch((error)=>{
+        console.log(error);
+    })
     parentElem.removeChild(childElem)
     
   }
